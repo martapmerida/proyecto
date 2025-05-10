@@ -39,4 +39,4 @@ jobs:
         git config user.name "GitHub Actions - Proyecto"
         git config user.email "martapmerida@gmail.com"
         git commit -am "Update app1 image to ${{ env.GHCR_REPOSITORY }}:${{ env.IMAGE_TAG }}"
-        git push
+        git diff --quiet || (git commit -am "Update app1 image to ${{ env.GHCR_REPOSITORY }}:${{ env.IMAGE_TAG }}" && git push)
