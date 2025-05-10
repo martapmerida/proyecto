@@ -38,5 +38,11 @@ jobs:
         sed -i "s|image: .*|image: ${{ env.GHCR_REPOSITORY }}:${{ env.IMAGE_TAG }}|" k8s/app1/deployment.yaml
         git config user.name "GitHub Actions - Proyecto"
         git config user.email "martapmerida@gmail.com"
-        git commit -am "Update app1 image to ${{ env.GHCR_REPOSITORY }}:${{ env.IMAGE_TAG }}"
-        git diff --quiet || (git commit -am "Update app1 image to ${{ env.GHCR_REPOSITORY }}:${{ env.IMAGE_TAG }}" && git push)
+    
+        if ! git diff --quiet; then
+          git commit -am "Update app1 image to ${{ env.GHCR_REPOSITORY }}:${{ env.IMAGE_TAG }}"
+          git push
+        else
+          echo "No changes to commit."
+        fi
+
