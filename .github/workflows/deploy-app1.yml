@@ -21,7 +21,6 @@ jobs:
       run: |
         git config --global user.name "GitHub Actions - Proyecto"
         git config --global user.email "martapmerida@gmail.com"
-        git remote set-url origin https://${{ secrets.GHCR_TOKEN }}@github.com/${{ github.repository }}.git
 
     - name: Log in to GitHub Container Registry
       uses: docker/login-action@v2
@@ -44,5 +43,5 @@ jobs:
         git diff
         git add k8s/app1/deployment.yaml
         git commit -m "Update app1 image to ${{ env.GHCR_REPOSITORY }}:${{ env.IMAGE_TAG }}"
-        git push
+        git push origin main
 
