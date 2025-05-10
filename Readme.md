@@ -10,6 +10,8 @@ Este repositorio contiene una serie de scripts Bash divididos en etapas para pre
 - `2_git_clone.sh`: Configura Git y clona el repositorio.
 - `3_docker_install.sh`: Instala Docker y lo configura.
 - `4_run_nginx.sh`: Construye y ejecuta un contenedor Docker.
+- `5_k3s.sh`: Instala K3s y lo configura.
+- `6_argocd.sh`: Instala Argocd y lo configura.
 
 ---
 
