@@ -5,8 +5,7 @@ metadata:
   namespace: default
 spec:
   rules:
-  - host: 18.214.252.255
-    http:
+  - http:
       paths:
       - path: /
         pathType: Prefix
