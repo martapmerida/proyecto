@@ -1,8 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app1
+  namespace: default
 spec:
-  containers:
-  - name: app1
-    image: ghcr.io/martapmerida/proyecto/app1:latest
-    ports:
-    - containerPort: 80
-  imagePullSecrets:
-  - name: ghcr-secret
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app1
+  template:
+    metadata:
+      labels:
+        app: app1
+    spec:
+      containers:
+      - name: app1
+        image: ghcr.io/martapmerida/proyecto/app1:latest
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: ghcr-secret
