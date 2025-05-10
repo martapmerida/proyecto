@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: app1
-        image: ghcr.io/martapmerida/proyecto/app1:v18
+        image: ghcr.io/martapmerida/proyecto/app1:v19
         imagePullPolicy: Always
         ports:
         - containerPort: 80
