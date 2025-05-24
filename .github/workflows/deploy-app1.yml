@@ -43,5 +43,5 @@ jobs:
         git diff
         git add k8s/app1/deployment.yaml
         git commit -m "Update app1 image to ${{ env.GHCR_REPOSITORY }}:${{ env.IMAGE_TAG }}"
-        git push
-
+        git pull origin main --rebase
+        git push origin main
