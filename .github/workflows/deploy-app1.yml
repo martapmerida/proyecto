@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'k8s/app1/**'
+      - 'app1/**'         
 
 env:
   GHCR_REPOSITORY: ghcr.io/martapmerida/proyecto/app1
@@ -43,5 +46,5 @@ jobs:
         git diff
         git add k8s/app1/deployment.yaml
         git commit -m "Update app1 image to ${{ env.GHCR_REPOSITORY }}:${{ env.IMAGE_TAG }}"
-        git pull origin main --rebase
-        git push origin main
+        git push
+
