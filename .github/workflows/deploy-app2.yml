@@ -29,6 +29,9 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GHCR_TOKEN }}
 
+    - name: Give execute permission to gradlew
+      run: chmod +x ./app2/gradlew
+
     - name: Build JAR with Gradle
       run: |
         cd app2
