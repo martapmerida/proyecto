@@ -1,9 +1,7 @@
 FROM openjdk:17-jdk-slim
 
-WORKDIR .
+COPY target/*.jar app.jar
 
-COPY target/hello-world.jar app.jar
-
-EXPOSE 80
+EXPOSE 8080
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
